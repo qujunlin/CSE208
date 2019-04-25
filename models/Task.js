@@ -8,7 +8,7 @@ const TaskSchema = new Schema({
   time:time,
   owner: {
     type: Schema.Types.ObjectId,
-    ref: User,
+    ref: 'User',
   },
   created_at: {
     type: String,
