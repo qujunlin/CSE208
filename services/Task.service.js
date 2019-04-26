@@ -1,4 +1,4 @@
-const { Task } = require('../models/Task');
+const Task = require('../models/Task');
 
 exports.createTask = async (data) => {
     const task = await Task.create(data);
@@ -11,6 +11,8 @@ exports.deleteTask = async (id) => {
 };
 
 exports.getTasksByUserId = async(userId) => {
-    const tasks = await Task.find({ user: userId });
+    const tasks = await Task.find({ owner: userId });
     return tasks;
 };
+
+exports.punchTask = id => Task.findByIdAndUpdate(id, { state: 1 }, { new: true });

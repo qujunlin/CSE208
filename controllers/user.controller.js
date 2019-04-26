@@ -13,11 +13,22 @@ exports.createUser = async (req, res) => {
 };
 
 exports.authUser = async (req, res) => { 
-   try{
-     const { nickName, passWord } = req.params;
-     const user = await userService.authUser(nickName, passWord);
-     res.json({ user });
+  try{
+    const { nickName, passWord } = req.params;
+    const user = await userServices.authUser(nickName, passWord);
+    res.json({ user });
    } catch (e) {
-     res.status(400).json({ message: e });
+    res.status(400).json({ message: e });
    }
+};
+
+exports.updateUser = async (req, res) => {
+  try{
+    const { id } = req.params;
+    const data = req.body;
+    const user = await userServices.updateUser(id, data, { new: true });
+    res.json({ user });
+  } catch (e) {
+    res.status(400).json({ message: e });
+  }
 };

@@ -4,8 +4,11 @@ const { Schema } = mongoose;
 
 const TaskSchema = new Schema({
   content: String,
-  state:Integer,
-  time:time,
+  state:{
+    type: Number,
+    default: 0,
+  },
+  time:Number,
   owner: {
     type: Schema.Types.ObjectId,
     ref: 'User',
