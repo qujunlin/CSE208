@@ -11,3 +11,11 @@ exports.authUser = async (nickName, passWord) => {
 };
 
 exports.updateUser = (id, data) => User.findByIdAndUpdate(id, data, { new: true });
+
+exports.getRank = async() => {
+  const users = await User.find();
+  const rank = [10];
+  for (let counter1 = 0; counter1 < 10; counter1++) {
+    rank.push(users[counter]);
+  }
+};

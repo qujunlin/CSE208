@@ -1,4 +1,5 @@
 const Task = require('../models/Task');
+const User = require('../models/User');
 
 exports.createTask = async (data) => {
     const task = await Task.create(data);
@@ -15,4 +16,14 @@ exports.getTasksByUserId = async(userId) => {
     return tasks;
 };
 
-exports.punchTask = id => Task.findByIdAndUpdate(id, { state: 1 }, { new: true });
+exports.punchTask = async(id) => {
+    const task = await Task.findByIdAndUpdate(id, { state: 1 }, { new: true });
+    const { owner } = task; 
+    const user = await user.findByIdAndUpdate(owner, 
+        { $inc: { state: 1 } }, 
+        { new: true });
+};
+
+// exports.setDates = async (date) => {
+   
+// };

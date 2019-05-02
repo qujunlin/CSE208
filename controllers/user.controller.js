@@ -32,3 +32,12 @@ exports.updateUser = async (req, res) => {
     res.status(400).json({ message: e });
   }
 };
+
+exports.getRank = async (req, res) => {
+  try{
+    const rank = await userServices.getRank();
+    res.json({ rank });
+  } catch (e) {
+    res.status(400).json({ message: e });
+  }
+};

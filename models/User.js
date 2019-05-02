@@ -7,6 +7,10 @@ const UserSchema = new Schema ({
   password: String,
   avatarUrl: String,
   email: String,
+  credits: {
+    type: Number,
+    default: 0,
+  },
   tasks:{
     type: Schema.Types.ObjectId,
     ref: 'Task'
