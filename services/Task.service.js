@@ -22,4 +22,5 @@ exports.punchTask = async(id) => {
     const user = await User.findByIdAndUpdate(owner, 
         { $inc: { state: 1 } }, 
         { new: true });
+    return user;
 };

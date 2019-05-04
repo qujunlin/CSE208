@@ -18,4 +18,5 @@ exports.getRank = async() => {
   for (let counter1 = 0; counter1 < 10; counter1++) {
     rank.push(users[counter]);
   }
+  return rank;
 };
