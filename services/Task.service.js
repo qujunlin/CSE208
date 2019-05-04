@@ -19,7 +19,7 @@ exports.getTasksByUserId = async(userId) => {
 exports.punchTask = async(id) => {
     const task = await Task.findByIdAndUpdate(id, { state: 1 }, { new: true });
     const { owner } = task; 
-    const user = await user.findByIdAndUpdate(owner, 
+    const user = await User.findByIdAndUpdate(owner, 
         { $inc: { state: 1 } }, 
         { new: true });
 };
