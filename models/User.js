@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema ({
-  nickName: String,
-  passWord: String,
+  nickname: String,
+  password: String,
   avatarUrl: String,
   email: String,
   credits: {
