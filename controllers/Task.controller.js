@@ -25,7 +25,7 @@ exports.getTasksByUserId = async (req, res) => {
     try{
         const { userId } = req.params;
         const task = await taskServices.getTasksByUserId(userId);
-        return res.json({ task });
+        res.json({ task });
     } catch (e) {
         res.status(400).json({ message: e })
     }
@@ -35,7 +35,7 @@ exports.punchTask = async (req, res) => {
     try{
         const { id } = req.params;
         const task = await taskServices.punchTask(id);
-        return res.json({ task });
+        res.json({ task });
     } catch (e) {
         res.status(400).json({ message: e });
     }

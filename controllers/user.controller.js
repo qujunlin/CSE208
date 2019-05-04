@@ -14,8 +14,8 @@ exports.createUser = async (req, res) => {
 
 exports.authUser = async (req, res) => { 
   try{
-    const { nickName, passWord } = req.params;
-    const user = await userServices.authUser(nickName, passWord);
+    const { nickname, password } = req.body;
+    const user = await userServices.authUser(nickname, password);
     res.json({ user });
    } catch (e) {
     res.status(400).json({ message: e });

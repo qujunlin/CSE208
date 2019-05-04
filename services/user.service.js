@@ -5,8 +5,8 @@ exports.createUser = async (data) => {
    return user;
 };
 
-exports.authUser = async (nickName, passWord) => {
-  const user = await User.findOne({ nickName, passWord});
+exports.authUser = async (nickname, password) => {
+  const user = await User.findOne({ nickname, password });
   return user;
 };
 
@@ -16,7 +16,7 @@ exports.getRank = async() => {
   const users = await User.find();
   const rank = [10];
   for (let counter1 = 0; counter1 < 10; counter1++) {
-    rank.push(users[counter]);
+    rank.push(users[counter1]);
   }
   return rank;
 };
