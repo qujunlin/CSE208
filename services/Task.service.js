@@ -23,7 +23,3 @@ exports.punchTask = async(id) => {
         { $inc: { state: 1 } }, 
         { new: true });
 };
-
-// exports.setDates = async (date) => {
-   
-// };
