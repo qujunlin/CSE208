@@ -20,7 +20,7 @@ exports.punchTask = async(id) => {
     const task = await Task.findByIdAndUpdate(id, { state: 1 }, { new: true });
     const { owner } = task; 
     const user = await User.findByIdAndUpdate(owner, 
-        { $inc: { state: 1 } }, 
+        { $inc: { credits: 1 } }, 
         { new: true });
     return user;
 };
