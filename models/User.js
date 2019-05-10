@@ -7,6 +7,7 @@ const UserSchema = new Schema ({
   password: String,
   avatarUrl: String,
   email: String,
+  person_infor: String, 
   credits: {
     type: Number,
     default: 0,
