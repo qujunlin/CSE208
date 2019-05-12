@@ -8,10 +8,7 @@ const TaskSchema = new Schema({
     type: Number,
     default: 0,
   },
-  dates: [{
-    type: String,
-    default: Date.now,
-  }],
+  dates: String,
   time:Number,
   owner: {
     type: Schema.Types.ObjectId,
